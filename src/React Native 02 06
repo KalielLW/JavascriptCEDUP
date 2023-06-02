@@ -1,0 +1,42 @@
+import  React, {useState} from "react";
+import {StyleSheet, View, Text, TextInput} from "react-native";
+
+function App() {
+
+  let [getNumero, setNumero] = useState();
+
+  return (
+    <View style={estilo.container}>
+      <View>
+        <TextInput
+          placeholder="Digite o número 1:"
+          onChangeText={(value) => setNumero(value)}
+          value={getNumero}
+          autoFocus={true}
+          syle={estilo.inputox2}
+          placeholderTextColor="black" />
+      </View>
+        <View>
+          <Text style={estilo.inputbox2}> {getNumero} </Text>
+        </View>
+      </View>  
+  );
+}
+
+const estilo = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  inputbox2: {
+    width: 300, //largura
+    padding: 10, //espaçamento interno
+    marginBotton: 10, //margem em baixa
+    flexDirection: "row", //direção do campo
+    backgroundColor: "#5092DE", //cor de fundo
+    borderRadius: 20, //bordas arredondadas
+    borderColor: "#000000", //cor da borda
+    borderWidth: 2 //grossura da borda
+  }
+});
+
+export default App;
